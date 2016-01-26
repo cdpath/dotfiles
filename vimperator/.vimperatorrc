@@ -1,0 +1,48 @@
+" use `mkv` to refresh this file in firefox
+
+" Exchange : with ;
+noremap ; :
+
+" Page Turn
+set nextpattern=^较旧的文章,'^(下|后)一?(页|頁|篇|章|张)|次のページ|次へ','^\bnext\b','\bnext\b','\bsuivant\b','^(>|›)$','^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set previouspattern=较新的文章,'^(上|前)一?(页|頁|篇|章|张)|次のページ|次へ','^\bprev\b','\bprevious\b','^(<|‹)$','^(<<|«)$','^(<|«)','(<|«)$','\bless\b'
+
+" Tab Switch
+map h gT
+map l gt
+map w gT
+map e gt
+
+" Speed Up
+noremap j <C-d>
+noremap k <C-u>
+
+" CommandLine Scheme
+highlight CmdLine background: lightgreen; color: black; transition: all 0.25s;font-size:14pt
+highlight ErrorMsg color: black; background: pink; font-weight: bold;font-size:14pt
+
+" Hint Scheme
+highlight Hint font-family: monospace; font-size: 14px; font-weight: bold; text-transform: uppercase; color: black; background-color: yellow; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
+highlight HintElem background-color: pink;  color: black;
+
+" Appearance
+set gui=noaddons,nobookmarks,nomenu,nonavigation,tabs
+command v set gui=navigation
+command V set gui=nonavigation
+
+" Options
+" Image Y/N
+command nimg set! permissions.default.image=2
+command yimg set! permissions.default.image=1
+" JS Y/N
+command njs set! javascript.enabled=false
+command yjs set! javascript.enabled=true
+" Search Engine
+" set defsearch=b
+" Others
+set complete=b
+" Ctrl-i to edit(Insert mode)
+set editor='subl -f +<line> +"sil! call cursor(0, <column>)" <file>'
+
+" Plugin
+:nnoremap Y :copy markdownLink<CR>

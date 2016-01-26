@@ -1,0 +1,11 @@
+alias "l=ls -lh"
+alias "la=ls -al"
+alias "vi=vim"
+alias "a=cd .. && ls -lh"
+alias "b=cd - && ls -lh"
+alias "subl=open -b com.sublimetext.3 "
+alias "less=less -S"
+export PS1="\u: \w \$"
+export HOMEBREW_BOTTLE_DOMAIN=http://7xkcej.dl1.z0.glb.clouddn.com
+export WORKON_HOME=~/Envs
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles

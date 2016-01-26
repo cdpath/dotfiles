@@ -1,0 +1,26 @@
+"hg7101
+
+loadplugins '\.(js|penta)$'
+group user
+highlight CmdCmdLine background:black;color:whitesmoke;font-size:14pt
+map -count -modes=n ; -builtin <count>:
+map -count -modes=n e -builtin <count><C-n>
+map -count -modes=n h -builtin <count><count><C-p>
+map -count -modes=n,v j -builtin <count>10j
+map -count -modes=n,v k -builtin <count>10k
+map -count -modes=n l -builtin <count><count><C-n>
+map -modes=n,v o -javascript str=util.domToString(buffer.focusedFrame.getSelection()); str!=""?dactyl.open(str, {where: dactyl.CURRENT_TAB}):CommandExMode().open("open ")
+map -modes=n,v t -javascript str=util.domToString(buffer.focusedFrame.getSelection()); str!=""?dactyl.open(str, {where: dactyl.NEW_TAB}):CommandExMode().open("tabopen ")
+map -count -modes=n,v v <count>;set<Space>go!=mT<Return>
+map -count -modes=n w <count>gT
+map -count -modes=n : -builtin <count>;
+set complete=bookmark
+set defsearch=b
+set editor='subl -f +<line> +"sil! call cursor(0, <column>)" <file>'
+set guioptions=TCr
+set nextpattern=^较旧的文章,'^(下|后)一?(页|頁|篇|章|张)|次のページ|次へ','^\bnext\b','\bnext\b','\bsuivant\b','^(>|›)$','^(>>|»)$','^(>|»)','(>|»)$','\bmore\b'
+set passkeys=mail.google.com:jk/<CR>,gi,another.domain.com:hjkl,gt,gT,mail.google.com:jk/<CR>,gi,another.domain.com:hjkl,gt,gT
+set previouspattern=较新的文章,'^(上|前)一?(页|頁|篇|章|张)|次のページ|次へ','^\bprev\b','\bprevious\b','^(<|‹)$','^(<<|«)$','^(<|«)','(<|«)$','\bless\b'
+set titlestring='time flies!'
+
+" vim: set ft=pentadactyl:
