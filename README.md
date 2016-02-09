@@ -13,3 +13,6 @@ git config --global core.excludesfile ~/.gitignore_global
 stow git
 ...
 ```
+
+## reference
+[Ignoring files globally](https://help.github.com/articles/ignoring-files/)
